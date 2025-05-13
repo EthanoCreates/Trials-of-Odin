@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a34e393e32dbd07468fc4ab2c4b8e877, type: 3}
+  m_Name: GeneralEnemyStates
+  m_EditorClassIdentifier: 
+  groundedState: 0
+  landState: 0
+  idleState: 0
+  patrolState: 0
+  chaseState: 0
+  searchState: 0
+  attackState: 0
+  blockState: 0
+  stunnedState: 0
+  fallState: 0

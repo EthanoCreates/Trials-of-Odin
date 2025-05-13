@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e4f14173239535645b5c9ba142b38100
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 186501
+  packageName: LOWPOLY - Ragnar's Legacy
+  packageVersion: 1.0
+  assetPath: Assets/ThirdParty/RagnarsLegacy/Prefabs/Quiver_Thora.prefab
+  uploadId: 409859

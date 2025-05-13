@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d75c049ff9815943ba20ead0343bc16, type: 3}
+  m_Name: LightChargedAttack
+  m_EditorClassIdentifier: 
+  animationState: 6
+  animationSpeed: 1.5
+  damageMultiplier: 1
+  chargingTimer: 0.7
+  canCombo: 1
+  lightComboTransition: 1
+  heavyComboTransition: 2
+  hasRecoveryAttack: 0
+  recoveryAttack: 0
+  animatorOverrideController: {fileID: 22100000, guid: b3139c6248b93174096367c56a5a2ab4,
+    type: 2}
+  lightCombosListLength: 0
+  heavyCombosListLength: 0
+  recoveryAttacksListLength: 0

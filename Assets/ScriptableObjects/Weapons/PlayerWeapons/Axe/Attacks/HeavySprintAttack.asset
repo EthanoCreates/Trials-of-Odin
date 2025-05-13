@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d75c049ff9815943ba20ead0343bc16, type: 3}
+  m_Name: HeavySprintAttack
+  m_EditorClassIdentifier: 
+  damageMultiplier: 1
+  staminaCost: 5
+  chargingTimer: 1
+  canCombo: 0
+  lightComboTransition: 1
+  heavyComboTransition: 1
+  hasRecoveryAttack: 1
+  recoveryAttack: 0
+  animationState: 9
+  animationSpeed: 1.3
+  overrideSwingSound: 0
+  swingVelocity: 1
+  swingSoundPitch: {x: 0.9, y: 1.1}
+  overrideEffortSound: 0
+  effortVelocity: 1
+  overrideHitSound: 0
+  hitVelocity: 1
+  animatorOverrideController: {fileID: 22100000, guid: 8453fc01626412e42a186d6e5e146165, type: 2}
+  lightCombosListLength: 2
+  heavyCombosListLength: 3
+  recoveryAttacksListLength: 2
+  effortSounds:
+    <Name>k__BackingField: Effort
+    <ID>k__BackingField: 1073741837
+    MulticlipsPlayMode: 2
+    _group: {fileID: 0}
+    Clips:
+    - AudioClip: {fileID: 8300000, guid: a06df7868f4fe344cae000a1e89a6848, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0.037
+      EndPosition: 0.057
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 1
+    - AudioClip: {fileID: 8300000, guid: 47a679128f00d1b4da84a2f6fbabea0a, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0.011
+      EndPosition: 0.066
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 2
+    - AudioClip: {fileID: 8300000, guid: f7e20aa9083ace74aa820902233682bf, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0.017
+      EndPosition: 0.038
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 3
+    - AudioClip: {fileID: 8300000, guid: d3d0dc47f8656194e8bd5484f1a3cfca, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0.028
+      EndPosition: 0.119
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 4
+    <MasterVolume>k__BackingField: 0.8
+    <Loop>k__BackingField: 0
+    <SeamlessLoop>k__BackingField: 0
+    <TransitionTime>k__BackingField: 0
+    <SpatialSetting>k__BackingField: {fileID: 0}
+    <Priority>k__BackingField: 128
+    <Pitch>k__BackingField: 0.9
+    <PitchRandomRange>k__BackingField: 0.19999999
+    <VolumeRandomRange>k__BackingField: 0
+    <RandomFlags>k__BackingField: 1
+    SeamlessTransitionType: 0
+    TransitionTempo:
+      BPM: 0
+      Beats: 0
+    SnapToFullVolume: 0
+  swingSounds:
+    <Name>k__BackingField: Swing
+    <ID>k__BackingField: 1073741841
+    MulticlipsPlayMode: 2
+    _group: {fileID: 0}
+    Clips:
+    - AudioClip: {fileID: 8300000, guid: 333efcc7a2c3a8d49b45ad71a34dfcdf, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0
+      EndPosition: 0
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 1
+    - AudioClip: {fileID: 8300000, guid: c21c2d2cc89fa5b41828a838bbe9503d, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0
+      EndPosition: 0
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 2
+    - AudioClip: {fileID: 8300000, guid: 0a2502a7f6dd5854daa6f69393247b7e, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0
+      EndPosition: 0
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 3
+    <MasterVolume>k__BackingField: 1
+    <Loop>k__BackingField: 0
+    <SeamlessLoop>k__BackingField: 0
+    <TransitionTime>k__BackingField: 0
+    <SpatialSetting>k__BackingField: {fileID: 0}
+    <Priority>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <PitchRandomRange>k__BackingField: 0
+    <VolumeRandomRange>k__BackingField: 0
+    <RandomFlags>k__BackingField: 0
+    SeamlessTransitionType: 0
+    TransitionTempo:
+      BPM: 0
+      Beats: 0
+    SnapToFullVolume: 0
+  hitSounds:
+    <Name>k__BackingField: Hit
+    <ID>k__BackingField: 1073741845
+    MulticlipsPlayMode: 2
+    _group: {fileID: 0}
+    Clips:
+    - AudioClip: {fileID: 8300000, guid: bedc6bb9fe720244d98b9d17ceb72ad1, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0
+      EndPosition: 0
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 1
+    - AudioClip: {fileID: 8300000, guid: b99a2c68ed2ce844794d4dbd3b8103a2, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0
+      EndPosition: 0
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 2
+    - AudioClip: {fileID: 8300000, guid: 301512f6650de744aaa1bcaf4e0da1e0, type: 3}
+      Volume: 1
+      Delay: 0
+      StartPosition: 0
+      EndPosition: 0
+      FadeIn: 0
+      FadeOut: 0
+      Weight: 3
+    <MasterVolume>k__BackingField: 0.6
+    <Loop>k__BackingField: 0
+    <SeamlessLoop>k__BackingField: 0
+    <TransitionTime>k__BackingField: 0
+    <SpatialSetting>k__BackingField: {fileID: 0}
+    <Priority>k__BackingField: 1
+    <Pitch>k__BackingField: 1
+    <PitchRandomRange>k__BackingField: 0.20000005
+    <VolumeRandomRange>k__BackingField: 0
+    <RandomFlags>k__BackingField: 1
+    SeamlessTransitionType: 0
+    TransitionTempo:
+      BPM: 0
+      Beats: 0
+    SnapToFullVolume: 0
+  effortAudioClip: {fileID: 0}
+  hitAudioClip: {fileID: 0}
+  swingAudioClip: {fileID: 0}

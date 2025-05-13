@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d75c049ff9815943ba20ead0343bc16, type: 3}
+  m_Name: LightCombo2
+  m_EditorClassIdentifier: 
+  animationState: 5
+  animationSpeed: 1.2
+  damageMultiplier: 1
+  chargingTimer: 1
+  canCombo: 1
+  lightComboTransition: 0
+  heavyComboTransition: 0
+  hasRecoveryAttack: 0
+  recoveryAttack: 0
+  swingSound: 0
+  swingSoundPitchRange: {x: 0.9, y: 1.1}
+  velocity: 1
+  animatorOverrideController: {fileID: 22100000, guid: b3139c6248b93174096367c56a5a2ab4,
+    type: 2}
+  swingListLength: 0
+  lightCombosListLength: 2
+  heavyCombosListLength: 3
+  recoveryAttacksListLength: 2
+  effortSounds:
+    <Name>k__BackingField: 
+    <ID>k__BackingField: 0
+    MulticlipsPlayMode: 0
+    Clips: []
+    <MasterVolume>k__BackingField: 0
+    <Loop>k__BackingField: 0
+    <SeamlessLoop>k__BackingField: 0
+    <TransitionTime>k__BackingField: 0
+    <SpatialSetting>k__BackingField: {fileID: 0}
+    <Priority>k__BackingField: 0
+    <Pitch>k__BackingField: 0
+    <PitchRandomRange>k__BackingField: 0
+    <VolumeRandomRange>k__BackingField: 0
+    <RandomFlags>k__BackingField: 0
+    SeamlessTransitionType: 0
+    TransitionTempo:
+      BPM: 0
+      Beats: 0
+    SnapToFullVolume: 0
+  effortAudioClip: {fileID: 8300000, guid: d1a4b34f9c9584a39919a6f1ddbeb03e, type: 3}

@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0d7f161d61e1047a03e29240793cec, type: 3}
+  m_Name: Bow
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 2800000, guid: 7a6fe930fdb5f5f4586491e5db757063, type: 3}
+  Name: Bow
+  damage: 20
+  StanceBreakPower: 20
+  animatorOverrideController: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  holsterSlot: 2
+  holderSlot: 1
+  hasAimAttacks: 1
+  Description: 
+  Notes: 
+  swingSounds:
+    ID: 1073741843
+    _sourceAsset: {fileID: 11400000, guid: 2b1b0b26b715a0c4aaffe93ff1a9d846, type: 2}
+    <DebugObject>k__BackingField: {fileID: 0}
+  hitSounds:
+    ID: 1073741844
+    _sourceAsset: {fileID: 11400000, guid: 2b1b0b26b715a0c4aaffe93ff1a9d846, type: 2}
+    <DebugObject>k__BackingField: {fileID: 0}
+  effortSounds:
+    ID: 1073741837
+    _sourceAsset: {fileID: 11400000, guid: 94baf0f18f2e4984b91e8c3f7cea6c2a, type: 2}
+    <DebugObject>k__BackingField: {fileID: 0}
+  hitVFX:
+  - {fileID: 5024009746357069194, guid: c9ac09592a06e064288805a6519c4887, type: 3}
+  animatorOverride: 0
+  helperAnimationState: 0
+  helperDamageMultiplier: 1
+  helperAnimationSpeed: 1
+  baseAnimPath: Assets/Animations/HumanoidAnimations/CombatAnimations/BowAnimations
+  walkFbx: Archer@Walk01
+  runFbx: Archer@Run01
+  autoSelectPath: 2
+  lightCombos:
+  - {fileID: 11400000, guid: 5d85a9413b6294e4c9aca45eb3a26f50, type: 2}
+  - {fileID: 11400000, guid: 67009698750d5d14cbd942436e36b118, type: 2}
+  heavyCombos:
+  - {fileID: 11400000, guid: 7e000de690ce11741a09508e5280d8fd, type: 2}
+  - {fileID: 11400000, guid: a54acb4985b430d44a9287e1de3e9a27, type: 2}
+  - {fileID: 11400000, guid: 3a4a785885fbebb4cbcfe38d58427c3c, type: 2}
+  lightChargedAttack: {fileID: 11400000, guid: 43965a37273926d4c8f61e49a60837f0, type: 2}
+  heavyChargedAttack: {fileID: 11400000, guid: 90f57e26bde5733498678621d5b32e02, type: 2}
+  lightAerialAttack: {fileID: 11400000, guid: cd0cd6f803c0f8e459ec7182e66b7beb, type: 2}
+  heavyAerialAttack: {fileID: 11400000, guid: d24e080a6e928e944a2179b191602fc2, type: 2}
+  lightSprintAttack: {fileID: 11400000, guid: 8eb3097958f55a5468464d3ab496da11, type: 2}
+  heavySprintAttack: {fileID: 11400000, guid: 0a676449ce265354fafcb0277727e0a6, type: 2}
+  lightAimAttack: {fileID: 11400000, guid: a313bc7549423594290d59c84f4da2a0, type: 2}
+  heavyAimAttack: {fileID: 11400000, guid: 5bad1cee52714154ba25029b6b32a579, type: 2}
+  finisherAttack: {fileID: 0}
+  recoveryAttacks:
+  - {fileID: 11400000, guid: 99825965868c56147ac493f03631c3ef, type: 2}
+  - {fileID: 11400000, guid: 06a79601d375d744eafdbdbbdead9b8a, type: 2}
+  otherWeaponAnims:
+  - baseAnimName: Equip
+    overrideClip: {fileID: 7400000, guid: 570673fc01787a947a5f6a3249453a78, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: UnEquip
+    overrideClip: {fileID: 7400000, guid: 0ca99f4c278882f43be62f0658a70fbb, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: AttackPrimer
+    overrideClip: {fileID: 7400000, guid: 807319bea82a0204a983cfd8feb73093, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: Reload
+    overrideClip: {fileID: 7400000, guid: 096504a646f8c44448d704b4d6ea7a99, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: Aim
+    overrideClip: {fileID: 7400000, guid: 110b7faf0bb5f7c45ac746e981b967b6, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: Load
+    overrideClip: {fileID: 7400000, guid: dbdb18b5875742f448717501386dc061, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  movementAnims:
+  - baseAnimName: Idle
+    overrideClip: {fileID: 7400000, guid: 7991bbc304a167548bed85eb167af714, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkForward
+    overrideClip: {fileID: 7400016, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkBackward
+    overrideClip: {fileID: 7400026, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkLeft
+    overrideClip: {fileID: 7400022, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkRight
+    overrideClip: {fileID: 7400024, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkForwardLeft
+    overrideClip: {fileID: 7400018, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkForwardRight
+    overrideClip: {fileID: 7400020, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkBackwardLeft
+    overrideClip: {fileID: 7400028, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: WalkBackwardRight
+    overrideClip: {fileID: 7400030, guid: db17bbbb4b9f90540ac6b1ed1308ce5d, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunForward
+    overrideClip: {fileID: 7400000, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunBackward
+    overrideClip: {fileID: 7400010, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunLeft
+    overrideClip: {fileID: 7400006, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunRight
+    overrideClip: {fileID: 7400008, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunForwardLeft
+    overrideClip: {fileID: 7400002, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunForwardRight
+    overrideClip: {fileID: 7400004, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunBackwardLeft
+    overrideClip: {fileID: 7400012, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: RunBackwardRight
+    overrideClip: {fileID: 7400014, guid: ffa80d3b5efa427449b2c37a9155679a, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: Sprint
+    overrideClip: {fileID: 7400000, guid: c9adc57fa9ee4fb409af3d7dd055f62f, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: Block
+    overrideClip: {fileID: 7400000, guid: 1c308111984082946a5cee2afb237c59, type: 2}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  - baseAnimName: Jump
+    overrideClip: {fileID: 7400008, guid: 06ca50354dc56d641a1dc3b07393b396, type: 3}
+    controller: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
+  animatorOverrideControllerDebug: {fileID: 22100000, guid: 594563f58a0e0094e91c5a99ba8e9450, type: 2}
