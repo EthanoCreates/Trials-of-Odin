@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 0
   settings:
-    intensity: 0.6
+    intensity: 0.8
     isolatedColor: {r: 0, g: 0, b: 0, a: 1}
     isolatedThreshold: 1
     factorLAB: {x: 1, y: 1, z: 1}

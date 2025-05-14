@@ -13,6 +13,8 @@
 # Ignore specific asset folders
 /[Aa]ssets/ThirdParty/
 /[Aa]ssets/Scenes/
+/[Pp]ackages/
+/Screenshots/
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
