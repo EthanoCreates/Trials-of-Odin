@@ -31,9 +31,8 @@ public class PlayerUI : Singleton<PlayerUI>
         HealthBarEasingUI.value = 1;
         healthBarUI.value = 1;
         staminaBarUI.value = 1;
-        resetComboCountUI();
+        ResetComboCountUI();
         PlayerStateMachine.OnAnyPlayerSpawn += PlayerStateMachine_OnAnyPlayerSpawn;
-
     }
 
     private void PlayerStateMachine_OnAnyPlayerSpawn(object sender, System.EventArgs e)
@@ -47,7 +46,7 @@ public class PlayerUI : Singleton<PlayerUI>
         if(odinFill <= odinFillAmount) comboCount++;
         if (comboCount == comboCounter.Count + 1) comboCount = 1;
 
-        resetComboCountUI();
+        ResetComboCountUI();
 
         for(int i = 0; i < comboCount; i++)
         {
@@ -60,12 +59,19 @@ public class PlayerUI : Singleton<PlayerUI>
         }
     }
 
-    public void resetComboCountUI()
+    public void ResetComboCountUI()
     {
         foreach(Toggle comboToggle in comboCounter)
         {
             comboToggle.isOn = false;
         }
+    }
+
+    public void ResetAll()
+    {
+        ResetComboCountUI();
+        comboCount = 0;
+        odinFill = 0;
     }
 
     public void OdinFillUI()

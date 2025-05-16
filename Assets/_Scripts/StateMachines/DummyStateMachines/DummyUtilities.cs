@@ -18,11 +18,11 @@ public class DummyUtilities : HumanoidUtilities
     public EnemyDataSO dummyData;
     private Health health;
 
-    public DummyUtilities(DummyStateMachine stateMachine, EnemyDataSO data, Health health, EnemyVFX enemyVFX, EnemyUI UI, AlignComponent finisherAlign)
+    public DummyUtilities(DummyStateMachine stateMachine, EnemyStats enemyStats, EnemyDataSO data, Health health, EnemyVFX enemyVFX, EnemyUI UI, AlignComponent finisherAlign)
     {
         StateMachine = stateMachine;
 
-        Context = new DummyContext(stateMachine.transform, data);
+        Context = new DummyContext(stateMachine.transform, enemyStats, data);
         CombatManager = new DummyCombatManager(health, data, enemyVFX, UI, finisherAlign);
         AnimationRequestor = new DummyAnimationRequestor();
 

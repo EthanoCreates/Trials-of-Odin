@@ -8,13 +8,13 @@ public class EnemyContext : EnemyAISMContext
         EnemyStateMachine = enemyStateMachine;
         Agent = agent;
         Transform = transform;
-        GroundLayers = groundLayers;
+        //GroundLayers = groundLayers;
         Radius = Agent.radius * enemyStateMachine.transform.lossyScale.x;
         AttackRange = Radius * 4;
         BlockRange = Radius * 8;
         GroundedOffset = -(Agent.height/2 - GroundCheckRadius * 2);
-        WalkSpeed = walkSpeed;
-        RunSpeed = runSpeed;
+        //WalkSpeed = walkSpeed;
+        //RunSpeed = runSpeed;
         Health = health;
         PrimaryWeapon = primaryWeapon;
         StoppingDistance = agent.stoppingDistance;

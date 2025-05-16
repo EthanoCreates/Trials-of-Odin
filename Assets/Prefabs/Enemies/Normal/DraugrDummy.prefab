@@ -795,6 +795,54 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1456195331117282038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6560188672150740572}
+  - component: {fileID: 338761279851959895}
+  m_Layer: 0
+  m_Name: Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6560188672150740572
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456195331117282038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5782857686454961004}
+  m_Father: {fileID: 1240121226580647727}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &338761279851959895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456195331117282038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a9c50727a198147867c9298fbe3a98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  stamina: {fileID: 0}
+  enemyStats: {fileID: 11400000, guid: 902b06aaefd1cb8488c459a8b11f31d0, type: 2}
 --- !u!1 &1468714227440140696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3385,7 +3433,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1240121226580647727}
+  m_Father: {fileID: 6560188672150740572}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7811190927467651167
 MonoBehaviour:
@@ -3839,13 +3887,13 @@ VisualEffect:
       m_Array: []
     m_Vector3f:
       m_Array:
-      - m_Value: {x: 359.74994, y: 0.0016901034, z: -0.001394635}
+      - m_Value: {x: 359.74994, y: 270.0017, z: -0.0013946389}
         m_Name: Transform_angles
         m_Overridden: 1
-      - m_Value: {x: 0.8000925, y: 1.5333567, z: -1.7379347}
+      - m_Value: {x: 37.757935, y: 1.5133566, z: -1.5999075}
         m_Name: Transform_position
         m_Overridden: 1
-      - m_Value: {x: 1, y: 1.0000002, z: 1.0000002}
+      - m_Value: {x: 1.0000005, y: 1.0000002, z: 1.0000007}
         m_Name: Transform_scale
         m_Overridden: 1
       - m_Value: {x: 0, y: 0, z: 0}
@@ -13115,7 +13163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5782857686454961004}
+  - {fileID: 6560188672150740572}
   - {fileID: 2260675518256613536}
   - {fileID: 2828176331193259286}
   - {fileID: 1679074280570002455}
@@ -14942,6 +14990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
+  enemyStats: {fileID: 338761279851959895}
   dummyData: {fileID: 11400000, guid: 902b06aaefd1cb8488c459a8b11f31d0, type: 2}
   health: {fileID: 7811190927467651167}
   UI: {fileID: 8602033100550506669}

@@ -4,7 +4,10 @@ using System;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
+using TrialsOfOdin.Combat;
+using RootMotion.FinalIK;
 
+[RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 {
     /*
@@ -14,9 +17,6 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     public static PlayerStateMachine LocalInstance { get; private set; }
     public CharacterController CharacterController { get; private set; }
-
-    [FoldoutGroup("Player References")]
-    [SerializeField] private PlayerDataSO playerData;
 
     [FoldoutGroup("Player References")]
     [SerializeField] private PlayerStats playerStats;
@@ -47,6 +47,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
     public PlayerSoundRequestor AudioRequestor { get; private set; }
     public PlayerMovementUtility MovementUtility { get; private set; }
     public PlayerCombatManager CombatManager { get; private set; }
+    public ArmIK armIK;
     public enum EPlayerState
     {
         Grounded, //Root State
@@ -173,7 +174,7 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
     private void InitializeScripts()
     {
-        Utilities = new PlayerUtilities(playerData, playerStats);
+        Utilities = new PlayerUtilities(playerStats, armIK);
 
         Context = Utilities.Context;
         CombatManager = Utilities.CombatManager;

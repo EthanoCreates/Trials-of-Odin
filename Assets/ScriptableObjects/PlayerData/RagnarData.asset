@@ -15,14 +15,14 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 6
   sprintSpeed: 12
-  sprintTime: 1e+23
+  sprintTime: 30
   jumpHeight: 2
   groundLayers:
     serializedVersion: 2
-    m_Bits: 28681
+    m_Bits: 4105
   vaultLayers:
     serializedVersion: 2
-    m_Bits: 4096
+    m_Bits: 0
   climbLayers:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 0

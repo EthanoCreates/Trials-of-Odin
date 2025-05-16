@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class DummyContext : EnemyAISMContext
 {
-    public DummyContext(Transform transform, EnemyDataSO dummyData)
+    public DummyContext(Transform transform, EnemyStats enemyStats, EnemyDataSO dummyData)
     {
+        humanoidStats = enemyStats;
         Transform = transform;
-        GroundLayers = dummyData.groundLayers;
 
         DummyAnimator animator = Transform.GetComponent<DummyAnimator>();
 

@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-
+using TrialsOfOdin.Combat;
 public class PlayerAnimationRequestor
 {
     //Movement Events

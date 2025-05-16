@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
-
+using TrialsOfOdin.Combat;
+using RootMotion.FinalIK;
 public class PlayerUtilities
 {
     public event EventHandler<OnDamageBlockedEventArgs> OnDamageBlocked;
@@ -12,11 +13,11 @@ public class PlayerUtilities
     public PlayerAnimationRequestor AnimationRequestor { get; private set; }
     public PlayerSoundRequestor AudioRequestor { get; private set; }
 
-    public PlayerUtilities(PlayerDataSO playerData, PlayerStats stats)
+    public PlayerUtilities(PlayerStats stats, ArmIK armIK)
     {
-        Context = new PlayerContext(playerData);
+        Context = new PlayerContext(stats);
+        CombatManager = new PlayerCombatManager(stats, armIK);
         MovementUtility = new PlayerMovementUtility();
-        CombatManager = new PlayerCombatManager();
         AnimationRequestor = new PlayerAnimationRequestor(CombatManager);
         AudioRequestor = new PlayerSoundRequestor();
         this.stats = stats;

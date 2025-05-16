@@ -7,22 +7,14 @@ public class PlayerContext : HumanoidSMContext
     public event EventHandler OnResetCamera;
     public event EventHandler OnResetAnimator;
 
-    public PlayerContext(PlayerDataSO playerData)
+    public PlayerContext(PlayerStats stats)
     {
         PlayerStateMachine localPlayerStateMachine = PlayerStateMachine.LocalInstance;
 
         CharacterController = localPlayerStateMachine.CharacterController;
-        GroundLayers = playerData.groundLayers;
-        VaultLayer = playerData.vaultLayers;
-        ClimbLayer = playerData.climbLayers;
-        WalkSpeed = playerData.walkSpeed;
-        RunSpeed = playerData.runSpeed;
-        SprintSpeed = playerData.sprintSpeed;
-        SprintTime = playerData.sprintTime;
-        JumpHeight = playerData.jumpHeight;
+        humanoidStats = stats;
 
-        SprintTimer = playerData.sprintTime;
-        SprintTime = playerData.sprintTime;
+        SprintTimer = humanoidStats.SprintTime;
 
         GameInput gameInput = GameInput.Instance;
         gameInput.OnJump += (object sender, EventArgs e) => { IsJumping = true; CoroutineHelper.Instance.StartCoroutine(TurnOffJumpAfterDelay(JumpTimeout + .1f)); };
@@ -34,10 +26,7 @@ public class PlayerContext : HumanoidSMContext
         animator.OnAnimFinished += (object sender, EventArgs e) => AnimFinished = true;
     }
 
-    //Player specific Movement fields 
-    public float SprintSpeed { get; private set; }
-    public float SprintTime { get; private set; }
-    public float SprintTimer { get; set; }
+
     public bool IsDamaged { get; set; }
 
     public override bool CheckIfGrounded()

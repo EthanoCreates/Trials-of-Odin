@@ -67,6 +67,7 @@ public class PlayerRunState : PlayerState
         runToSprintLerp = runSpeed;
         sprintSpeed = Context.SprintSpeed;
         sprintTime = Context.SprintTime;
+        Context.SprintTimer = sprintTime;
         canTacticalSprint = GameInput.Instance.IsTacticalSprinting();
     }
 }

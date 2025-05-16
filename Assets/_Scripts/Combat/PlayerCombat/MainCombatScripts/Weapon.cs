@@ -112,6 +112,7 @@ public abstract class Weapon : DamageSource
                 HandleEnemyCollision(collision);
                 if (EffectID != AttackID)
                 {
+                    //PlayerStateMachine.LocalInstance.CombatManager.ActivateArmIK(collision.contacts[0].point, collision.contacts[0].normal);
                     PlayerUI.Instance.IncreaseComboCount();
                     if (weaponData.hitVFX != null) Instantiate(weaponData.hitVFX[Random.Range(0, weaponData.hitVFX.Count - 1)], collision.contacts[0].point, Quaternion.identity);
                     PlayHitSound(collision.relativeVelocity.magnitude);

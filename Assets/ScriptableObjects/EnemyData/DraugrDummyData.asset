@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: DraugrDummyData
   m_EditorClassIdentifier: 
   maxHealth: 100
-  stanceStrength: 80
+  stanceStrength: 60
   walkSpeed: 0
   runSpeed: 0
   groundLayers:
     serializedVersion: 2
-    m_Bits: 28681
+    m_Bits: 4105
   DamagingWeaponLayers:
     serializedVersion: 2
     m_Bits: 2048

@@ -117,7 +117,16 @@ public class DummyCombatManager : HumanoidCombatManager
 
     public DamageType CalculateDamageState(float stanceBreakPower, Vector3 impactDirection, bool isLegHit)
     {
+        Debug.Log("Hello");
         float stanceStrength = dummyData.stanceStrength;
+
+        if (DamageType == DamageType.Popup & IsDamaged)
+        { 
+            //gravity reduction would be nice?
+            PopUp();
+            return DamageType.Popup;
+        }
+
         if (StanceBreakBuildUp > stanceStrength)
         {
             if (health.GetCurrentHealth() < dummyData.maxHealth / 3)

@@ -1,4 +1,3 @@
-using MoreMountains.Feedbacks;
 using System.Collections;
 using TrailsFX;
 using UnityEngine;
@@ -74,7 +73,6 @@ public class Spear : Weapon, IAimAttacks, IThrowable
     private void AnimationRequestor_OnAimExit(object sender, System.EventArgs e)
     {
         if(ammo == 0) return;
-        Debug.Log("Hello");
         base.WeaponToHand();
     }
 

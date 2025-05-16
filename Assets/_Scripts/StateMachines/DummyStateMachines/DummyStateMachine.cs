@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class DummyStateMachine : StateManager<DummyStateMachine.EDummyState>, IRagdollAnimator2Receiver, IHumanoidUtilities
 {
     public event EventHandler OnScriptsInitialized;
+    [SerializeField] private EnemyStats enemyStats;
     [SerializeField] private EnemyDataSO dummyData;
     [SerializeField] private Health health;
     [SerializeField] private EnemyUI UI;
@@ -64,7 +65,7 @@ public class DummyStateMachine : StateManager<DummyStateMachine.EDummyState>, IR
 
     public void InitalizeScripts()
     {
-        utilies = new DummyUtilities(this, dummyData, health, VFX, UI, finisherAligner);
+        utilies = new DummyUtilities(this, enemyStats, dummyData, health, VFX, UI, finisherAligner);
         OnScriptsInitialized?.Invoke(this, EventArgs.Empty);
     }
 

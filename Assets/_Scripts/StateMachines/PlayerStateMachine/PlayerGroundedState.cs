@@ -6,7 +6,6 @@ public class PlayerGroundedState : PlayerState
     private float timeTillFall;
     private float timerTillFall;
     private float jumpTimeout;
-    private float sprintTime;
     private bool isFalling;
 
     public PlayerGroundedState(PlayerUtilities utilities, PlayerStateMachine.EPlayerState estate) : base(utilities, estate)
@@ -83,7 +82,6 @@ public class PlayerGroundedState : PlayerState
         AnimationRequestor.AnimateLand(MovementUtility.VerticalVelocity);
         AudioRequestor.PlayLandSound();
 
-        sprintTime = Context.SprintTime;
         jumpTimeout = Context.JumpTimeout;
         timeTillFall = Context.FallTimeout;
         timerTillFall = timeTillFall;

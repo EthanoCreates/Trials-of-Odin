@@ -310,6 +310,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8409462889826251947}
     m_Modifications:
+    - target: {fileID: 237099486298360350, guid: bf870e6129b8794499441540b1cf3365, type: 3}
+      propertyPath: 'damageColliders.Array.data[0]'
+      value: 
+      objectReference: {fileID: 9110696599540206021}
     - target: {fileID: 777295268638273733, guid: bf870e6129b8794499441540b1cf3365, type: 3}
       propertyPath: minDistance
       value: 0.5
@@ -437,6 +441,11 @@ MonoBehaviour:
 --- !u!4 &1637303062881661542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1414594037935299609, guid: bf870e6129b8794499441540b1cf3365, type: 3}
+  m_PrefabInstance: {fileID: 367460898974772863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &9110696599540206021 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 8896520167078012858, guid: bf870e6129b8794499441540b1cf3365, type: 3}
   m_PrefabInstance: {fileID: 367460898974772863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3107154271193276427
