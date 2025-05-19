@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TrialsOfOdin.Combat;
 using RootMotion.FinalIK;
+using TrialsOfOdin.Stats;
 public class PlayerUtilities
 {
     public event EventHandler<OnDamageBlockedEventArgs> OnDamageBlocked;
@@ -26,7 +27,9 @@ public class PlayerUtilities
 
     public void TakeDamage(float damageAmount, Vector3 collisionPosition, int attackID, HealthForRagdolls enemyHealth)
     {
-        if (attackID == GetAttackID()) return; //ensuring only 1 hit gets registered on attack
+        if (attackID == CombatManager.DamagedID) return; //ensuring only 1 hit gets registered on attack
+
+        CombatManager.DamagedID = attackID;
         Transform transform = MovementUtility.Transform;
 
         if (CombatManager.IsBlocking)
@@ -44,32 +47,30 @@ public class PlayerUtilities
         Vector3 directionToHitInWorld = Direction(transform.position, collisionPosition); // Parameter 1 = Target, Parameter 2 = Thing doing the hitting
         Vector3 forceDirection = transform.InverseTransformDirection(directionToHitInWorld);
 
-        stats.Health.TakeDamage(damageAmount, attackID, forceDirection);
+        stats.Health.TakeDamage(damageAmount);
 
         Context.IsDamaged = true;
         AnimationRequestor.AnimateImpact(forceDirection.x, forceDirection.z);
         AudioRequestor.PlayHurtSound();
     }
     private Vector3 Direction(Vector3 fromPosition, Vector3 toPosition) => (toPosition - fromPosition).normalized;
-
-    public int GetAttackID () => stats.Health.currentAttackID;
     public void RecoverStamina()
     {
         stats.Stamina.RecoverStamina();
     }
     public bool TrySprintWithStamina()
     {
-        return stats.Stamina.CanSprint();
+        return stats.Stamina.TrySprint();
     }
 
     public bool HasSufficientStamina(float staminaCost)
     {
-        return stats.Stamina.HasSufficientStamina(staminaCost);
+        return stats.Stamina.TryUseStamina(staminaCost);
     }
 
     public bool CouldPerformActionWithStamina(float staminaCost)
     {
-        return stats.Stamina.CouldPerformActionWithStamina(staminaCost);
+        return stats.Stamina.HasStamina(staminaCost);
     }
 
     public class OnDamageBlockedEventArgs

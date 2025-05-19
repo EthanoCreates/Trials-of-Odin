@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 
-public class EnemyStats : CharacterStats
+namespace TrialsOfOdin.Stats
 {
-    [SerializeField] EnemyDataSO enemyStats;
-
-    private void Start()
+    public class EnemyStats : CharacterStats
     {
-        WalkSpeed = enemyStats.walkSpeed;
-        RunSpeed = enemyStats.runSpeed;
-        GroundLayers = enemyStats.groundLayers;
+        [SerializeField] EnemyDataSO enemyStats;
+
+        private void Start()
+        {
+            WalkSpeed = enemyStats.walkSpeed;
+            RunSpeed = enemyStats.runSpeed;
+            GroundLayers = enemyStats.groundLayers;
+        }
     }
 }

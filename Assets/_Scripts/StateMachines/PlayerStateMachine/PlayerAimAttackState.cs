@@ -1,3 +1,4 @@
+using TrialsOfOdin.Combat;
 using UnityEngine;
 public class PlayerAimAttackState : PlayerState
 {

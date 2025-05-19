@@ -8,6 +8,7 @@ using UnityEditor;
 using System.Collections;
 using UnityEngine.Playables;
 using RootMotion.FinalIK;
+using TrialsOfOdin.Stats;
 
 namespace TrialsOfOdin.Combat
 {
@@ -56,8 +57,9 @@ namespace TrialsOfOdin.Combat
         private bool targetted;
         private float motionWarpCancelDistance = 2f;
         private ArmIK armIK;
+        private float rageTime = 10f;
+        public int DamagedID { get; set; }
 
-        public float rageTime = 10f;
 
         public PlayerCombatManager(PlayerStats stats, ArmIK armIK)
         {

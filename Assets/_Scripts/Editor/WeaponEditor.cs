@@ -1,5 +1,6 @@
 #if UNITY_EDITOR
 using Sirenix.OdinInspector.Editor;
+using TrialsOfOdin.Combat;
 using UnityEditor;
 
 public class WeaponEditor : OdinMenuEditorWindow

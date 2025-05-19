@@ -1,6 +1,7 @@
 using Ami.BroAudio;
 using RootMotion.FinalIK;
 using System;
+using TrialsOfOdin.Combat;
 using UnityEngine;
 
 public class PlayerSoundManager : MonoBehaviour

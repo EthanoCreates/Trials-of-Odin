@@ -1,3 +1,4 @@
+using TrialsOfOdin.Stats;
 using UnityEngine;
 
 public class EnemyTarget : MonoBehaviour
@@ -10,7 +11,7 @@ public class EnemyTarget : MonoBehaviour
         targetParent.GetComponentInChildren<Health>().OnDeath += EnemyTarget_OnDeath;
     }
 
-    private void EnemyTarget_OnDeath(object sender, System.EventArgs e)
+    private void EnemyTarget_OnDeath()
     {
         this.gameObject.SetActive(false);
     }

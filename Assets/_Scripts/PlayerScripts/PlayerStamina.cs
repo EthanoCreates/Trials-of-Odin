@@ -9,7 +9,6 @@ public class PlayerStamina : MonoBehaviour
     [SerializeField] private float staminaRecovery = 10f;
     [SerializeField] private float staminaDepletionEasing= .1f;
     [SerializeField] private bool isRecovering = true;
-    private float targetStaminaDepletion;
     private Coroutine staminaUIRoutine;
     private float staminaUIValue; 
     [ShowInInspector]
@@ -19,7 +18,7 @@ public class PlayerStamina : MonoBehaviour
     {
         CurrentStamina = maxStamina;
         staminaUIValue = CurrentStamina;
-        UpdateStaminaUI();
+        //UpdateStaminaUI();
     }
 
     public bool CanSprint()
@@ -29,7 +28,7 @@ public class PlayerStamina : MonoBehaviour
         CurrentStamina -= sprintStaminaCost * Time.deltaTime;
         staminaUIValue = CurrentStamina;
 
-        UpdateStaminaUI();
+        //UpdateStaminaUI();
         return true;
     }
 
@@ -64,7 +63,7 @@ public class PlayerStamina : MonoBehaviour
         CurrentStamina += staminaRecovery * Time.deltaTime;
         staminaUIValue = CurrentStamina;
 
-        UpdateStaminaUI();
+        //UpdateStaminaUI();
     }
 
     private void StartStaminaUICoroutine()
@@ -82,14 +81,14 @@ public class PlayerStamina : MonoBehaviour
         while (elapsedTime < staminaDepletionEasing)
         {
             staminaUIValue = Mathf.Lerp(startValue, targetValue, elapsedTime / staminaDepletionEasing);
-            PlayerUI.Instance.StaminaBarUI.value = staminaUIValue / maxStamina;
+            //PlayerUI.Instance.StaminaBarUI.value = staminaUIValue / maxStamina;
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         staminaUIValue = targetValue;
-        PlayerUI.Instance.StaminaBarUI.value = staminaUIValue / maxStamina;
+        //PlayerUI.Instance.StaminaBarUI.value = staminaUIValue / maxStamina;
     }
 
-    private void UpdateStaminaUI() => PlayerUI.Instance.StaminaBarUI.value = staminaUIValue / maxStamina;
+    //private void UpdateStaminaUI() => PlayerUI.Instance.StaminaBarUI.value = staminaUIValue / maxStamina;
 }

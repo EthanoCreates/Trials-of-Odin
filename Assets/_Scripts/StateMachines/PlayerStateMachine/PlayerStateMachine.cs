@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using TrialsOfOdin.Combat;
 using RootMotion.FinalIK;
+using TrialsOfOdin.Stats;
 
 [RequireComponent(typeof(CharacterController))]
 public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
@@ -118,20 +119,22 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
 
         transform.position = new Vector3(5,5, 5);
 
-        playerStats.Health.OnDeath += PlayerHealth_OnDeath;
+        playerStats.Health.OnDeath += Health_OnDeath;
+    }
+
+    private void Health_OnDeath()
+    {
+
     }
 
     public override void OnDestroy()
     {
         if (!IsOwner) return;
 
-        playerStats.Health.OnDeath -= PlayerHealth_OnDeath;
+        playerStats.Health.OnDeath -= Health_OnDeath;
     }
 
-    private void PlayerHealth_OnDeath(object sender, EventArgs e)
-    {
 
-    }
 
     private void Update()
     {
@@ -186,10 +189,5 @@ public class PlayerStateMachine : StateManager<PlayerStateMachine.EPlayerState>
     public static void ResetStaticData()
     {
         OnAnyPlayerSpawn = null;
-    }
-
-    public void ReInitialize()
-    {
-        PlayerUIManager.Instance.ReInitialize();
     }
 }

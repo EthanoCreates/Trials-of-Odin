@@ -1,44 +1,26 @@
-using System.Collections;
+using TrialsOfOdin.Stats;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerUIManager : Singleton<PlayerUIManager>
+public class PlayerUIManager : MonoBehaviour
 {
-    [SerializeField] private float healthBarEasing = 1f;
-    private Slider healthUI;
-    private Slider healthEasingUI;
-    private Slider staminaSlider;
+    private PlayerUI playerUI;
+    [SerializeField] private readonly Health health;
+    [SerializeField] private readonly Stamina stamina;
 
     private void Start()
     {
-        ReInitialize();
+        playerUI = PlayerUI.Instance;
+        health.OnTakeDamage += Health_OnTakeDamage;
+        stamina.OnStaminaChanged += Stamina_OnStaminaChanged;
     }
 
-    public void ReInitialize()
+    private void Stamina_OnStaminaChanged(float currentStamina, float maxStamina, bool shouldLerpUI)
     {
-        PlayerUI playerUI = PlayerUI.Instance;
-
-        healthUI = playerUI.HealthUI;
-        healthEasingUI = playerUI.HealthBarEasingUI;
-        staminaSlider = playerUI.StaminaBarUI;
+        if (shouldLerpUI) playerUI.LerpStaminaBar(currentStamina, maxStamina);
+        else playerUI.UpdateStaminaBar(currentStamina, maxStamina);
     }
 
-    public void DisplayHealth(float newFillAmount)
-    {
-        healthUI.value = newFillAmount;
-        StopCoroutine(nameof(HealthDisplayEasing));
-        StartCoroutine(HealthDisplayEasing(newFillAmount));
-    }
-
-    private IEnumerator HealthDisplayEasing(float targetFillAmount)
-    {
-        while (Mathf.Abs(healthEasingUI.value - targetFillAmount) > 0.01f)
-        {
-            healthEasingUI.value = Mathf.Lerp(healthEasingUI.value, targetFillAmount, Time.deltaTime * healthBarEasing);
-            yield return null; // Wait for the next frame
-        }
-
-        // Ensure the final value is set precisely
-        healthEasingUI.value = targetFillAmount;
-    }
+    private void Health_OnTakeDamage(float currentHealth, float maxHealth)
+        => playerUI.UpdateHealthBar(currentHealth, maxHealth);
+    
 }

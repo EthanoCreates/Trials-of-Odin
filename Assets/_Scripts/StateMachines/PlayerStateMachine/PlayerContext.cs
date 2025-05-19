@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TrialsOfOdin.Stats;
 using UnityEngine;
 
 public class PlayerContext : HumanoidSMContext

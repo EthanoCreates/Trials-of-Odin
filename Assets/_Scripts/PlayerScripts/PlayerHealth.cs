@@ -32,7 +32,6 @@ public class PlayerHealth : MonoBehaviour
             Die(forceDirection);
         }
 
-        PlayerUIManager.Instance.DisplayHealth(CurrentHealth / maxHealth);
     }  
 
     private void Die(Vector3 forceDirection)

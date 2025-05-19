@@ -2,6 +2,7 @@ using FIMSpace.FProceduralAnimation;
 using Kinemation.MotionWarping.Runtime.Examples;
 using Sirenix.OdinInspector;
 using System;
+using TrialsOfOdin.Stats;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -48,14 +49,13 @@ public class DummyStateMachine : StateManager<DummyStateMachine.EDummyState>, IR
         health.OnDeath += Health_OnDeath;
     }
 
-    private void Health_OnDeath(object sender, EventArgs e)
+    private void Health_OnDeath()
     {
         utilies.CombatManager.ApplyDeathForceAndSleep();
         VFX.Dissolve();
         health.OnDeath -= Health_OnDeath;
         this.enabled = false;
     }
-
 
     // Update is called once per frame
     void Update()

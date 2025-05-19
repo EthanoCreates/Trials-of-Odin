@@ -2,28 +2,29 @@ using System;
 using UnityEngine;
 
 
-public class Health : MonoBehaviour
+namespace TrialsOfOdin.Stats
 {
-    public event EventHandler OnTakeDamage;
-    public event EventHandler OnDeath;
-
-    [SerializeField] private float maxHealth = 100;
-    [SerializeField] private float currentHealth = 100;
-
-    private void Start()
+    public class Health : MonoBehaviour
     {
-        currentHealth = maxHealth;
-    }
-    public void TakeDamage(float damageTaken)
-    {
-        currentHealth -= damageTaken;
-        OnTakeDamage?.Invoke(this, EventArgs.Empty);
+        public delegate void TakeDamageEvent(float currentHealth, float maxHealth);
+        public event TakeDamageEvent OnTakeDamage;
+        public event Action OnDeath;
 
-        if(currentHealth <= 0)
+        [SerializeField] private float maxHealth = 100;
+        [SerializeField] private float currentHealth = 100;
+
+        private void Start()
         {
-            OnDeath?.Invoke(this, EventArgs.Empty);
+            currentHealth = maxHealth;
         }
+        public void TakeDamage(float damageTaken)
+        {
+            currentHealth -= damageTaken;
+            OnTakeDamage?.Invoke(currentHealth, maxHealth);
+
+            if (currentHealth <= 0) OnDeath?.Invoke();    
+        }
+        public float GetCurrentHealth() { return currentHealth; }
+        public float GetMaxHealth() { return maxHealth; }
     }
-    public float GetCurrentHealth() { return currentHealth; }
-    public float GetMaxHealth() { return maxHealth; }
 }

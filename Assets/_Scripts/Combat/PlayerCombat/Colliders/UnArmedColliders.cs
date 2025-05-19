@@ -1,29 +1,32 @@
 using System;
 using UnityEngine;
 
-public class UnArmedColliders : DamageSource
+namespace TrialsOfOdin.Combat
 {
-    public event EventHandler <CollisionEventArgs> OnEnemyCollision;
-    public event EventHandler <CollisionEventArgs> OnShieldCollision;
-
-    private UnArmed unArmed;
-
-
-    public class CollisionEventArgs
+    public class UnArmedColliders : DamageSource
     {
-        public Collision collision;    
-    }
+        public event EventHandler<CollisionEventArgs> OnEnemyCollision;
+        public event EventHandler<CollisionEventArgs> OnShieldCollision;
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(unArmed == null) unArmed = PlayerStateMachine.LocalInstance.WeaponHolster.unArmedWeapon.gameObject.GetComponent<UnArmed>();
+        private UnArmed unArmed;
 
-        if (unArmed.BlockedAttackID == unArmed.AttackID) return;
 
-        DamageAmount = unArmed.DamageAmount;
-        AttackID = unArmed.AttackID;
-        StanceBreakPower = unArmed.StanceBreakPower;
+        public class CollisionEventArgs
+        {
+            public Collision collision;
+        }
 
-        unArmed.OnCollisionEnter(collision);
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (unArmed == null) unArmed = PlayerStateMachine.LocalInstance.WeaponHolster.unArmedWeapon.gameObject.GetComponent<UnArmed>();
+
+            if (unArmed.BlockedAttackID == unArmed.AttackID) return;
+
+            DamageAmount = unArmed.DamageAmount;
+            AttackID = unArmed.AttackID;
+            StanceBreakPower = unArmed.StanceBreakPower;
+
+            unArmed.OnCollisionEnter(collision);
+        }
     }
 }

@@ -5,12 +5,11 @@ public class DamageOnContact : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private bool temporary;
 
-
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
         PlayerUtilities health = other.GetComponent<PlayerStateMachine>().Utilities;
-        int attackID = health.GetAttackID();
+        int attackID = health.CombatManager.DamagedID;
 
         if (health != null) health.TakeDamage(damage, this.transform.position, attackID++, null);
     }

@@ -1,17 +1,23 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TrialsOfOdin.Stats;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUI : Singleton<PlayerUI>
 {
-    [SerializeField] private Slider staminaBarUI;
-    [Space(10)]
     [Header("HealthUIs")]
     [SerializeField] private Slider healthBarUI;
     [SerializeField] private Slider healthBarEasingUI;
+    [SerializeField] private float healthBarEasing = 1;
+    [Space(10)]
+    [Header("StaminaUIs")]
+    [SerializeField] private Slider staminaBarUI;
+    [SerializeField] private float staminaBarEasing = 1;
+    private Coroutine staminaUIRoutine;
+    private float staminaUIValue;
 
     [SerializeField] private GameObject AimUI;
 
@@ -22,17 +28,64 @@ public class PlayerUI : Singleton<PlayerUI>
     [SerializeField] private int comboCount;
     private bool isRaging;
 
-    public Slider StaminaBarUI { get { return staminaBarUI; } }
-    public Slider HealthUI { get { return healthBarUI; } }
-    public Slider HealthBarEasingUI { get { return healthBarEasingUI; } }
-
     private void Start()
     {
-        HealthBarEasingUI.value = 1;
+        healthBarEasingUI.value = 1;
         healthBarUI.value = 1;
         staminaBarUI.value = 1;
         ResetComboCountUI();
         PlayerStateMachine.OnAnyPlayerSpawn += PlayerStateMachine_OnAnyPlayerSpawn;
+    }
+
+    public void UpdateHealthBar(float currentHealth, float maxHealth)
+    {
+        float newFillAmount = maxHealth > 0 ? currentHealth / maxHealth : 0f;
+
+        healthBarUI.value = newFillAmount;
+        StopCoroutine(nameof(HealthDisplayEasing));
+        StartCoroutine(HealthDisplayEasing(newFillAmount));
+    }
+
+    private IEnumerator HealthDisplayEasing(float targetFillAmount)
+    {
+        while (Mathf.Abs(healthBarEasingUI.value - targetFillAmount) > 0.01f)
+        {
+            healthBarEasingUI.value = Mathf.Lerp(healthBarEasingUI.value, targetFillAmount, Time.deltaTime * healthBarEasing);
+            yield return null; // Wait for the next frame
+        }
+
+        // Ensure the final value is set precisely
+        healthBarEasingUI.value = targetFillAmount;
+    }
+
+    public void UpdateStaminaBar(float currentStamina, float maxStamina)
+    {
+        staminaBarUI.value = currentStamina / maxStamina;
+        staminaUIValue = currentStamina;
+    }
+
+    public void LerpStaminaBar(float currentStamina, float maxStamina)
+    {
+        if (staminaUIRoutine != null) StopCoroutine(staminaUIRoutine);
+        staminaUIRoutine = StartCoroutine(LerpStaminaUI(currentStamina, maxStamina));
+    }
+
+    private IEnumerator LerpStaminaUI(float currentStamina, float maxStamina)
+    {
+        float startValue = staminaUIValue;
+        float targetValue = currentStamina;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < staminaBarEasing)
+        {
+            staminaUIValue = Mathf.Lerp(startValue, targetValue, elapsedTime / staminaBarEasing);
+            staminaBarUI.value = staminaUIValue / maxStamina;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        staminaUIValue = targetValue;
+        staminaBarUI.value = staminaUIValue / maxStamina;
     }
 
     private void PlayerStateMachine_OnAnyPlayerSpawn(object sender, System.EventArgs e)

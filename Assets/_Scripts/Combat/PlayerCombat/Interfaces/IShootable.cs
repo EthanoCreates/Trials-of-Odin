@@ -1,5 +1,8 @@
-public interface IShootable 
+namespace TrialsOfOdin.Combat
 {
-    void Shoot();
-    void Reload();
+    public interface IShootable
+    {
+        void Shoot();
+        void Reload();
+    }
 }

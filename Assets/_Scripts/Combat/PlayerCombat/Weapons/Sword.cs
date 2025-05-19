@@ -1,21 +1,24 @@
 using UnityEngine;
 using TrailsFX;
 
-public class Sword : Weapon
+namespace TrialsOfOdin.Combat
 {
-    [SerializeField] private TrailEffect trail;
-
-    public override void EnableWeaponVFX()
+    public class Sword : Weapon
     {
-        trail.checkWorldPosition = true;
-        trail.UpdateMaterialProperties();
-        trail.Restart();
-    }
+        [SerializeField] private TrailEffect trail;
 
-    public override void DisableWeaponVFX()
-    {
-        trail.checkWorldPosition = false;
-        trail.UpdateMaterialProperties();
-        trail.Restart();
+        public override void EnableWeaponVFX()
+        {
+            trail.checkWorldPosition = true;
+            trail.UpdateMaterialProperties();
+            trail.Restart();
+        }
+
+        public override void DisableWeaponVFX()
+        {
+            trail.checkWorldPosition = false;
+            trail.UpdateMaterialProperties();
+            trail.Restart();
+        }
     }
 }

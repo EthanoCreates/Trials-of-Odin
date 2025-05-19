@@ -598,8 +598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007cd2eddc3ac814590837b1518b62bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 5371913617600376911}
-  stamina: {fileID: 2675907241809438867}
+  health: {fileID: 2835683298241729821}
+  stamina: {fileID: 1473263120861078544}
   basePlayerStats: {fileID: 11400000, guid: 5d4dbed4d3e21214a8710794a7bb4986, type: 2}
 --- !u!114 &7953087806308449711
 MonoBehaviour:
@@ -978,7 +978,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aa30d182fd71764ea87456a1156fdcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarEasing: 1
+  health: {fileID: 2835683298241729821}
+  stamina: {fileID: 1473263120861078544}
 --- !u!1 &1926309440799591941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1426,8 +1427,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7357754828399070852}
-  - component: {fileID: 5371913617600376911}
-  - component: {fileID: 2675907241809438867}
+  - component: {fileID: 2835683298241729821}
+  - component: {fileID: 1473263120861078544}
   m_Layer: 6
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -1450,7 +1451,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4469800213504668498}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5371913617600376911
+--- !u!114 &2835683298241729821
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1459,14 +1460,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2645088148980655233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2757d6bd2698a340a96280520d7582a, type: 3}
+  m_Script: {fileID: 11500000, guid: daca16ec760b5584b97e02dca5be1318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  deathImpactForce: 10
-  ragdoll: {fileID: 0}
-  currentAttackID: 0
---- !u!114 &2675907241809438867
+  currentHealth: 100
+--- !u!114 &1473263120861078544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1475,14 +1474,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2645088148980655233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12b460c92bd927e419713866c5e8e2e6, type: 3}
+  m_Script: {fileID: 11500000, guid: bed7ee2ecce7ea1419c36c89879e47e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStamina: 80
+  maxStamina: 100
+  recoveryRate: 10
+  recoveryDelay: 1
+  canSprint: 1
   sprintStaminaCost: 3
-  staminaRecovery: 10
-  staminaDepletionEasing: 0.2
-  isRecovering: 1
+  currentStamina: 0
 --- !u!1 &2687329565350913299
 GameObject:
   m_ObjectHideFlags: 0

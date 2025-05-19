@@ -1,3 +1,4 @@
+using TrialsOfOdin.Stats;
 using UnityEngine;
 
 public abstract class HumanoidSMContext

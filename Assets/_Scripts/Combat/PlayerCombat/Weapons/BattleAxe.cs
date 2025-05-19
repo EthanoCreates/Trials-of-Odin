@@ -1,4 +1,7 @@
-public class BattleAxe : Weapon
+namespace TrialsOfOdin.Combat
 {
+    public class BattleAxe : Weapon
+    {
 
+    }
 }

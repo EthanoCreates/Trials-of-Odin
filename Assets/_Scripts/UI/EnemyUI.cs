@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using System.Collections;
+using TrialsOfOdin.Stats;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +22,8 @@ public class EnemyUI : MonoBehaviour
     [FoldoutGroup("FinisherAvailible")]
     [SerializeField] private Image finisherRadialTimer;
 
+    private Coroutine healthEasingCoroutine;
+
 
     public Slider HealthUI { get { return healthBarUI; } }
     public Slider HealthBarEasingUI { get { return healthBarEasingUI; } }
@@ -33,9 +36,7 @@ public class EnemyUI : MonoBehaviour
         health.OnTakeDamage += Health_OnTakeDamage;
     }
 
-    private Coroutine healthEasingCoroutine;
-
-    private void Health_OnTakeDamage(object sender, System.EventArgs e)
+    private void Health_OnTakeDamage(float currentHealth, float maxHealth)
     {
         float fillAmount = health.GetCurrentHealth() / health.GetMaxHealth();
         if (fillAmount < 0) fillAmount = 0;
@@ -49,7 +50,6 @@ public class EnemyUI : MonoBehaviour
         healthEasingCoroutine = StartCoroutine(HealthDisplayEasing(fillAmount));
     }
 
-
     private IEnumerator HealthDisplayEasing(float targetFillAmount)
     {
         while (healthBarEasingUI.value - targetFillAmount > 0.01f)
@@ -62,7 +62,6 @@ public class EnemyUI : MonoBehaviour
 
         if (targetFillAmount <= 0) headUIObject.SetActive(false);
     }
-
 
     public void StartFinisherTimer(float finisherTimer)
     {
