@@ -65,16 +65,16 @@ namespace TrialsOfOdin.Combat
         {
             this.armIK = armIK;
             GameInput gameInput = GameInput.Instance;
-            gameInput.OnHeavyAttackStarted += (object sender, EventArgs e) => OnHeavyAttackStarted?.Invoke(this, EventArgs.Empty);
-            gameInput.OnHeavyAttackFinished += (object sender, EventArgs e) => OnHeavyAttackFinished?.Invoke(this, EventArgs.Empty);
 
-            gameInput.OnLightAttackStarted += (object sender, EventArgs e) => OnLightAttackStarted?.Invoke(this, EventArgs.Empty);
-            gameInput.OnLightAttackFinished += (object sender, EventArgs e) => OnLightAttackFinished?.Invoke(this, EventArgs.Empty);
+            gameInput.OnHeavyAttackStarted += (object sender, EventArgs e) => 
+            { OnHeavyAttackStarted?.Invoke(this, EventArgs.Empty); IsHeavyAttacking = true; };
+            gameInput.OnHeavyAttackFinished += (object sender, EventArgs e) =>
+            { OnHeavyAttackFinished?.Invoke(this, EventArgs.Empty); IsHeavyAttacking = false; };
 
-            gameInput.OnHeavyAttackStarted += (object sender, EventArgs e) => IsHeavyAttacking = true;
-            gameInput.OnHeavyAttackFinished += (object sender, EventArgs e) => { IsHeavyAttacking = false; };
-            gameInput.OnLightAttackStarted += (object sender, EventArgs e) => IsLightAttacking = true;
-            gameInput.OnLightAttackFinished += (object sender, EventArgs e) => { IsLightAttacking = false; };
+            gameInput.OnLightAttackStarted += (object sender, EventArgs e) =>
+            { OnLightAttackStarted?.Invoke(this, EventArgs.Empty); IsLightAttacking = true; };
+            gameInput.OnLightAttackFinished += (object sender, EventArgs e) =>
+            { OnLightAttackFinished?.Invoke(this, EventArgs.Empty); IsLightAttacking = false; };
 
             gameInput.OnBlockStarted += (object sender, EventArgs e) => IsBlocking = true;
             gameInput.OnBlockFinished += (object sender, EventArgs e) => IsBlocking = false;

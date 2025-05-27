@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerUIManager : MonoBehaviour
 {
     private PlayerUI playerUI;
-    [SerializeField] private readonly Health health;
-    [SerializeField] private readonly Stamina stamina;
+    [SerializeField] private Health health;
+    [SerializeField] private Stamina stamina;
 
     private void Start()
     {

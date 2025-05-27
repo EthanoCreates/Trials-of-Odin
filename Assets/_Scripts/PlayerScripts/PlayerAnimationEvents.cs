@@ -33,7 +33,7 @@ public class PlayerAnimationEvents : MonoBehaviour
         OnComboAvalible?.Invoke(this, EventArgs.Empty);
     }
 
-    private void ComboUnAvailable()
+    public void ComboUnAvailable()
     {
         OnComboUnAvalible?.Invoke(this, EventArgs.Empty);
     }

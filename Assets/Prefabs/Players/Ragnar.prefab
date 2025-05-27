@@ -6582,6 +6582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2974068714401245806}
+  - component: {fileID: 6556500178426453962}
   - component: {fileID: 8195104117630264535}
   m_Layer: 6
   m_Name: Combat
@@ -6605,6 +6606,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8946440421784628215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6556500178426453962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237397675700717417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21484eaf032bb524384987073d4e40de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  combatProfileSO: {fileID: 0}
+  weaponHolster: {fileID: 8195104117630264535}
+  useInputForLightAttack: 1
+  lightAttack: {fileID: -9200586424384043888, guid: 40a2abb2b3c23294ba1e6824b810d3d7, type: 3}
+  useInputForHeavyAttack: 1
+  heavyAttack: {fileID: -159399213179650884, guid: 40a2abb2b3c23294ba1e6824b810d3d7, type: 3}
+  playerAnimationEvents: {fileID: 4223681563286698349}
+  OnAnimFinished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5153433339602361426}
+        m_TargetAssemblyTypeName: PlayerAnimator, Assembly-CSharp
+        m_MethodName: AnimationFinished
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnComboUnavailible:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4223681563286698349}
+        m_TargetAssemblyTypeName: PlayerAnimationEvents, Assembly-CSharp
+        m_MethodName: ComboUnAvailable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  canChargeFirstAttack: 1
+  isSprinting: 0
+  isAerialing: 0
+  isAiming: 0
 --- !u!114 &8195104117630264535
 MonoBehaviour:
   m_ObjectHideFlags: 0

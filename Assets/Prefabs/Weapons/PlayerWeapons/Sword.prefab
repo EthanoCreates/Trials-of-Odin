@@ -171,14 +171,14 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 7f004b27cf5316b4e92d7954423ee557, type: 2}
   damageColliders:
   - {fileID: 4026131994430663609}
-  overrideHandRotation: 0
-  handRotation: {x: 12, y: -90, z: -4.5}
   overrideHandPosition: 0
   handPosition: {x: 0, y: 0, z: 0}
-  overrideHolsterRotation: 1
-  holsterRotation: {x: 60, y: -85, z: -5}
+  overrideHandRotation: 0
+  handRotation: {x: 12, y: -90, z: -4.5}
   overrideHolsterPosition: 0
   holsterPosition: {x: 0, y: 0, z: 0}
+  overrideHolsterRotation: 1
+  holsterRotation: {x: 60, y: -85, z: -5}
   currentAttack: {fileID: 0}
   trail: {fileID: 5138217919086686126}
 --- !u!114 &5138217919086686126
@@ -394,7 +394,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 2

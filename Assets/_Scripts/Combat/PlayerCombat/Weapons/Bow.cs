@@ -26,10 +26,15 @@ namespace TrialsOfOdin.Combat
         private Coroutine aimCoroutine;
         private bool aiming;
         private PlayerStateMachine playerState; //caching class here for reload and state checking
+        private Animator bowString;
         public IAimAttacks.EAimAttackTypes HeavyAimAttackType => IAimAttacks.EAimAttackTypes.Shoot; //Heavy aim attacks are of the shooting type
 
         public IAimAttacks.EAimAttackTypes LightAimAttackType => IAimAttacks.EAimAttackTypes.Shoot; //Light aim attacks are of the shooting type
 
+        private void Start()
+        {
+            bowString = GetComponent<Animator>();
+        }
 
         public void HeavyAimAttack()
         {
@@ -103,6 +108,7 @@ namespace TrialsOfOdin.Combat
                         playerState.AnimationRequestor.AnimateAimExit();
                         // Trigger reload animation if not already reloading
                         playerState.AnimationRequestor.AnimateReload();
+
                         reloading = true;
                     }
                 }
@@ -149,6 +155,8 @@ namespace TrialsOfOdin.Combat
             arrowScript.OnDelete += ArrowScript_OnDelete;
 
             currentHeldArrow = null;
+
+            bowString.Play("Fire");
 
             Invoke(nameof(Reload), 0.1f);
         }
@@ -224,6 +232,7 @@ namespace TrialsOfOdin.Combat
             aiming = true;
             currentHeldArrow.localPosition = new Vector3(-.065f, .433f, .07f);
             currentHeldArrow.localEulerAngles = new Vector3(-80f, -69f, 69f);
+            Invoke(nameof(DrawAnimation), 1f);
         }
 
         /// <summary>
@@ -236,8 +245,11 @@ namespace TrialsOfOdin.Combat
             if (currentHeldArrow == null) return;
             currentHeldArrow.localPosition = new Vector3(-.06f, .068f, .06f);
             currentHeldArrow.localEulerAngles = new Vector3(-50f, -64f, -104f);
-            //Reload();
+            CancelInvoke(nameof(DrawAnimation));
+            bowString.Play("Fire");
         }
+
+        private void DrawAnimation() => bowString.Play("Draw");
 
         /// <summary>
         /// This makes the bow bend when the arrow is pulled back

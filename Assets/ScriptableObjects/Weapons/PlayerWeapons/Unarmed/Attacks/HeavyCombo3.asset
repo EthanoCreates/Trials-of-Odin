@@ -39,35 +39,35 @@ MonoBehaviour:
     MulticlipsPlayMode: 2
     _group: {fileID: 0}
     Clips:
-    - AudioClip: {fileID: 8300000, guid: e8d48cc3294b92340ac70f569ba8fe31, type: 3}
+    - AudioClip: {fileID: 8300000, guid: a06df7868f4fe344cae000a1e89a6848, type: 3}
       Volume: 1
       Delay: 0
       StartPosition: 0.037
-      EndPosition: 0
+      EndPosition: 0.057
       FadeIn: 0
       FadeOut: 0
       Weight: 1
-    - AudioClip: {fileID: 8300000, guid: e668820b46b96144d9b25fca085b087a, type: 3}
+    - AudioClip: {fileID: 8300000, guid: 47a679128f00d1b4da84a2f6fbabea0a, type: 3}
       Volume: 1
       Delay: 0
       StartPosition: 0.011
-      EndPosition: 0
+      EndPosition: 0.066
       FadeIn: 0
       FadeOut: 0
       Weight: 2
-    - AudioClip: {fileID: 8300000, guid: 8ac0cba80c2159f4fa2c1613c6449185, type: 3}
+    - AudioClip: {fileID: 8300000, guid: f7e20aa9083ace74aa820902233682bf, type: 3}
       Volume: 1
       Delay: 0
       StartPosition: 0.017
-      EndPosition: 0
+      EndPosition: 0.038
       FadeIn: 0
       FadeOut: 0
       Weight: 3
-    - AudioClip: {fileID: 8300000, guid: bc79b7c8081df3d43ab5e1cfeb9414ce, type: 3}
+    - AudioClip: {fileID: 8300000, guid: d3d0dc47f8656194e8bd5484f1a3cfca, type: 3}
       Volume: 1
       Delay: 0
       StartPosition: 0.028
-      EndPosition: 0
+      EndPosition: 0.119
       FadeIn: 0
       FadeOut: 0
       Weight: 4
@@ -145,7 +145,7 @@ MonoBehaviour:
       FadeIn: 0
       FadeOut: 0
       Weight: 1
-    - AudioClip: {fileID: 8300000, guid: ab14328224b898a429e751d90d026fae, type: 3}
+    - AudioClip: {fileID: 8300000, guid: badc375646e1f374d8efff38bac44e63, type: 3}
       Volume: 1
       Delay: 0
       StartPosition: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
       FadeIn: 0
       FadeOut: 0
       Weight: 2
-    - AudioClip: {fileID: 8300000, guid: 812c61ffac052974fb1af840f6810c48, type: 3}
+    - AudioClip: {fileID: 8300000, guid: 04570cfef4a68d3478830e06cd13de34, type: 3}
       Volume: 1
       Delay: 0
       StartPosition: 0
