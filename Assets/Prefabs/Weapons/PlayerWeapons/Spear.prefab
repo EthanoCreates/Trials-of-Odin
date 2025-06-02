@@ -141,14 +141,14 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 469ea2fa6b9cb4b4aaa0e6b920a633a2, type: 2}
   damageColliders:
   - {fileID: 6771366586405345587}
-  overrideHandRotation: 1
-  handRotation: {x: 90, y: 0, z: 0}
   overrideHandPosition: 1
   handPosition: {x: 0, y: 0, z: 0.4}
-  overrideHolsterRotation: 1
-  holsterRotation: {x: -35, y: -90, z: 180}
+  overrideHandRotation: 1
+  handRotation: {x: 90, y: 0, z: 0}
   overrideHolsterPosition: 1
   holsterPosition: {x: -0.3, y: -0.3, z: 0}
+  overrideHolsterRotation: 1
+  holsterRotation: {x: -35, y: -90, z: 180}
   currentAttack: {fileID: 11400000, guid: 642f4a9acc712714ab679d65beb4f8d2, type: 2}
   spearSpeed: 50
   rigidBody: {fileID: 3319612349750091313}
@@ -343,12 +343,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 2624
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.07392004, y: 0.05467034, z: 1}
-  m_Center: {x: 0.00000007636845, y: 0.000000044703484, z: 0.75}
+  m_Size: {x: 0.07392004, y: 1.16, z: 0.25}
+  m_Center: {x: 0, y: 0.57, z: 0}
 --- !u!54 &3319612349750091313
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -258,7 +258,14 @@ MonoBehaviour:
   weaponData: {fileID: 11400000, guid: 7f004b27cf5316b4e92d7954423ee557, type: 2}
   damageColliders:
   - {fileID: 4026131994430663609}
-  audioSource: {fileID: 6789123447318231806}
+  overrideHandPosition: 0
+  handPosition: {x: 0, y: 0, z: 0}
+  overrideHandRotation: 0
+  handRotation: {x: 0, y: 0, z: 0}
+  overrideHolsterPosition: 0
+  holsterPosition: {x: 0, y: 0, z: 0}
+  overrideHolsterRotation: 0
+  holsterRotation: {x: 0, y: 0, z: 0}
   currentAttack: {fileID: 0}
   trail: {fileID: 5138217919086686126}
 --- !u!114 &5138217919086686126
@@ -445,8 +452,8 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.2035, y: 0.838, z: 0.0803}
